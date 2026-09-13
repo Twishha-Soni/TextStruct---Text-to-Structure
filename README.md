@@ -22,20 +22,8 @@ The system is split into a FastAPI backend (extraction, classification, auth, pe
 
 ## Architecture
 
-```
-┌─────────────┐        ┌──────────────┐        ┌─────────────┐
-│  Streamlit  │ ──────▶│   FastAPI    │──────▶ │  PostgreSQL │
-│  Frontend   │ ◀────── │   Backend   │◀───────│   Database  │
-└─────────────┘        └──────┬───────┘        └─────────────┘
-                               │
-                    ┌──────────┴──────────┐
-                    │                     │
-              ┌─────▼─────┐        ┌──────▼──────┐
-              │  PaddleOCR │        │  Gemini LLM  │
-              │ (text/OCR  │        │ (classify +  │
-              │ extraction)│        │  extract)    │
-              └───────────┘        └──────────────┘
-```
+<img width="1314" height="789" alt="Workflow" src="https://github.com/user-attachments/assets/28f9c536-e23b-449d-b38d-254c1a0c8fb6" />
+
 
 **Request flow:**
 
